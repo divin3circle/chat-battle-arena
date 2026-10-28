@@ -12,7 +12,7 @@ Viewers send characters into a live battle arena overlaid on the stream. Charact
 
 ## 2. Background and stack
 
-The original PixelWars org (BitWarsTwitch) has a Python backend (bitwars-backend) and JavaScript overlay and extension repos (bitwars-overlay, bitwars-extension). This project keeps the same frontend approach but uses Node.js for the backend.
+The original PixelWars org (BitWarsTwitch) has a Python backend (bitwars-backend) and JavaScript overlay and extension repos (bitwars-overlay, bitwars-extension). This project now uses the Python backend architecture ported into the Chat Battle Arena monorepo, with renamed app surfaces and custom arena assets.
 
 Project layout for this build uses three separate codebases:
 - `chat-battle-arena-backend` (Node.js backend, authoritative game server)
