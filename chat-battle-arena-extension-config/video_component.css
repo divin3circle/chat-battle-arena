@@ -1,0 +1,72 @@
+:root {
+  --ink: #2b1630;
+  --plum: #4a2148;
+  --hot: #e0417a;
+  --rose: #f4749c;
+  --mist: #ffe0e8;
+  --sky: #84cdf0;
+  --mint: #b8f0a8;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; width: 100%; height: 100%; overflow: hidden; }
+body {
+  font-family: "Tektur", sans-serif;
+  color: var(--mist);
+  background: transparent;
+}
+
+.component-card {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 18px;
+  padding: 20px 24px;
+  border: 2px solid rgba(255, 179, 200, 0.34);
+  border-radius: 28px;
+  background:
+    linear-gradient(135deg, rgba(63, 154, 216, 0.22), rgba(224, 65, 122, 0.24)),
+    rgba(43, 22, 48, 0.72);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.42), inset 0 1px 0 rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(14px) saturate(1.3);
+}
+
+.component-hero {
+  width: min(22vh, 130px);
+  height: min(22vh, 130px);
+  object-fit: contain;
+  filter: drop-shadow(0 12px 12px rgba(0, 0, 0, 0.48));
+}
+
+.eyebrow {
+  color: var(--sky);
+  font-size: clamp(13px, 2vw, 22px);
+  font-weight: 900;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 4px 0 4px;
+  color: var(--mist);
+  font-size: clamp(26px, 5vw, 58px);
+  line-height: 0.95;
+  text-transform: uppercase;
+  text-shadow: 0 3px 0 var(--ink), 0 0 16px rgba(132, 205, 240, 0.42);
+}
+
+p {
+  margin: 0;
+  color: rgba(255, 224, 232, 0.9);
+  font-size: clamp(14px, 2vw, 24px);
+  font-weight: 800;
+}
+
+.component-diamond {
+  width: min(12vh, 72px);
+  height: min(12vh, 72px);
+  object-fit: contain;
+  filter: drop-shadow(0 0 14px rgba(132, 205, 240, 0.82));
+}
