@@ -1,0 +1,23 @@
+# temporary source clones
+pixelswars-demos/
+
+# dependencies and build output
+node_modules/
+dist/
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# local env/runtime data
+.env
+.env.*
+!.env.example
+*.db
+*.sqlite
+*.sqlite3
+
+# OS/editor
+.DS_Store
+.vscode/
+.idea/
