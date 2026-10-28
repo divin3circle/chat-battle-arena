@@ -1,5 +1,6 @@
 import os
 import base64
+import binascii
 from fastapi import HTTPException
 from fastapi.security import HTTPBearer
 from dotenv import load_dotenv
@@ -12,7 +13,17 @@ TWITCH_JWK_URL = "https://id.twitch.tv/oauth2/keys"
 DEV_AUTH_BYPASS = os.getenv("DEV_AUTH_BYPASS", "true").lower() in {"1", "true", "yes"}
 
 raw_secret = os.getenv("TWITCH_EXT_SECRET", "")
-twitch_ext_secret = base64.b64decode(raw_secret) if raw_secret else b""
+
+try:
+    twitch_ext_secret = base64.b64decode(raw_secret) if raw_secret else b""
+except (binascii.Error, ValueError):
+    if DEV_AUTH_BYPASS:
+        twitch_ext_secret = b""
+    else:
+        raise RuntimeError(
+            "TWITCH_EXT_SECRET must be a valid base64 Twitch Extension shared secret "
+            "when DEV_AUTH_BYPASS=false."
+        )
 
 
 def verify_and_decode_jwt(token: str):
