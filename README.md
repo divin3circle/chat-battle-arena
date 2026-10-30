@@ -148,4 +148,3 @@ EXTENSION_PORT=3004 make extension
 
 - The standalone overlay is kept as an OBS/browser-source fallback.
 - The Twitch fullscreen overlay is served from the extension folder via `video_fullscreen.html`.
-- `pixelswars-demos/` was only a temporary reference workspace and is intentionally ignored by git.
