@@ -21,3 +21,6 @@ __pycache__/
 .DS_Store
 .vscode/
 .idea/
+
+# local presentation/demo notes
+DEMO_VIDEO_SCRIPT.md
