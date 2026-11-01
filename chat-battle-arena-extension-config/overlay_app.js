@@ -8,7 +8,7 @@ const overlayParams = new URLSearchParams(window.location.search);
 const backendUrl = (
   overlayParams.get("backend") ||
   window.CHAT_BATTLE_ARENA_BACKEND_URL ||
-  "https://6c6e-105-161-235-254.ngrok-free.app"
+  "https://4059-41-90-172-222.ngrok-free.app"
 ).replace(/\/$/, "");
 
 function showDebugStatus(message) {

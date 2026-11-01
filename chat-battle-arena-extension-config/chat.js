@@ -167,7 +167,10 @@ async function postSpawnAttack(product, options = {}) {
     bits_cost: product.bitsCost,
   };
 
-  const headers = { "Content-Type": "application/json" };
+  const headers = {
+    "Content-Type": "application/json",
+    "ngrok-skip-browser-warning": "true",
+  };
   if (twitchAuthToken) {
     headers.Authorization = `Bearer ${twitchAuthToken}`;
   }

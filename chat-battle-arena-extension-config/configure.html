@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://extension-files.twitch.tv/helper/v1/twitch-ext.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tektur:wght@400..900&display=swap" rel="stylesheet">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <link rel="stylesheet" href="style_config.css?v=7">
+</head>
+<body>
+    <div class="background-container">
+        <div class="config-container" style="display: none;">
+            <h1 class="main-title">Setup Guide</h1>
+            <div class="wizard-progress" aria-label="Setup progress">
+                <button class="wizard-dot active" type="button" data-step="0">1</button>
+                <button class="wizard-dot" type="button" data-step="1">2</button>
+                <button class="wizard-dot" type="button" data-step="2">3</button>
+            </div>
+
+            <div class="stepper">
+                <section class="step wizard-step active" data-step="0">
+                    <div class="step-title">1. Configure your Profile</div>
+                    <div class="step-content">
+                        Name your tower. This is what viewers will see on the battle overlay.
+                    </div>
+                    <div class="input-group">
+                        <input type="text" class="name-input" placeholder="Enter your tower name">
+                    </div>
+                </section>
+
+                <section class="step wizard-step" data-step="1">
+                    <div class="step-title">2. Choose your Game Mode</div>
+                    <div class="tab-container">
+                        <button class="tab-button active" type="button" data-tab="costreaming">Co-Streaming</button>
+                        <button class="tab-button" type="button" data-tab="singleplayer">Singleplayer</button>
+                    </div>
+
+                    <div class="tab-content" id="costreaming-content">
+                        <div class="step-content">
+                            Connect two streamers by entering the other streamer's friend code.
+                        </div>
+                        <div class="input-group">
+                            <input type="text" class="costreamer-input" placeholder="Enter co-streamer's friend code">
+                        </div>
+                        <div class="friend-code-display">
+                            Your Friend Code: <span class="channel-id"></span>
+                        </div>
+                    </div>
+
+                    <div class="tab-content" id="singleplayer-content" style="display: none;">
+                        <div class="step-content">
+                            Run a solo arena. Viewers attack the enemy tower on your channel.
+                        </div>
+                        <div class="input-group">
+                            <input type="text" class="enemy-input" placeholder="Enter enemy tower's name">
+                        </div>
+                    </div>
+                </section>
+
+                <section class="step wizard-step" data-step="2">
+                    <div class="step-title">3. Connect to The Arena from OBS</div>
+                    <div class="step-content">
+                        Add this URL as an OBS Browser Source, or open it in a browser tab for this demo.
+                    </div>
+                    <div class="input-group">
+                        <input type="password" class="url-input" value="" readonly>
+                        <button class="toggle-visibility" type="button">
+                            <img src="public/eye.png" alt="Toggle visibility" class="eye-icon">
+                        </button>
+                    </div>
+                    <button class="copy-url-button" type="button">Copy Overlay URL</button>
+                </section>
+            </div>
+
+            <div class="wizard-actions">
+                <button class="wizard-back" type="button">Back</button>
+                <button class="wizard-next" type="button">Next</button>
+                <button class="save-button" type="button">Save</button>
+            </div>
+            <div class="save-inline-status" role="status" aria-live="polite"></div>
+        </div>
+    </div>
+
+    <div class="spinner-container" id="urlSpinner" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+        <div class="spinner"></div>
+    </div>
+
+    <img src="public/scout-running.gif" class="corner-gif-left">
+    <img src="public/blue-castle.gif" class="corner-gif-right">
+    <div class="save-notification">Settings saved successfully!</div>
+    <script src="config.js?v=7"></script>
+</body>
+</html>

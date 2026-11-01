@@ -5,12 +5,15 @@ let token = params.get("token") || "";
 let userId = params.get("userId") || "dev-user";
 let globalChannelId = params.get("channel") || "channel123";
 
-const BACKEND_URL = (params.get("backend") || "https://6c6e-105-161-235-254.ngrok-free.app").replace(/\/$/, "");
-const OVERLAY_URL = (params.get("overlay") || "https://d0a5-105-161-235-254.ngrok-free.app").replace(/\/$/, "");
+const BACKEND_URL = (params.get("backend") || "https://4059-41-90-172-222.ngrok-free.app").replace(/\/$/, "");
+const OVERLAY_URL = (params.get("overlay") || "https://6e72-41-90-172-222.ngrok-free.app").replace(/\/$/, "");
 let currentStep = 0;
 
 function authHeaders() {
-  const headers = { "Content-Type": "application/json" };
+  const headers = {
+    "Content-Type": "application/json",
+    "ngrok-skip-browser-warning": "true",
+  };
   if (token) {
     headers.Authorization = `Bearer ${token}`;
   }

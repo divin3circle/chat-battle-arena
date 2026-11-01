@@ -22,5 +22,8 @@ __pycache__/
 .vscode/
 .idea/
 
+# local logs
+*.log
+
 # local presentation/demo notes
 DEMO_VIDEO_SCRIPT.md
